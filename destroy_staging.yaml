@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+       - sudo yum update -y 
+       - sudo yum install -y unzip 
+       - curl -O https://releases.hashicorp.com/terraform/0.15.4/terraform_0.15.4_linux_amd64.zip 
+       - unzip terraform_0.15.4_linux_amd64.zip 
+       - sudo mv terraform /usr/local/bin/ 
+       - cd codepipeline
+       - terraform version 
+       - terraform init 
+       - terraform destroy --auto-approve
