@@ -8,7 +8,6 @@ phases:
        - curl -O https://releases.hashicorp.com/terraform/0.15.4/terraform_0.15.4_linux_amd64.zip 
        - unzip terraform_0.15.4_linux_amd64.zip 
        - sudo mv terraform /usr/local/bin/ 
-       - cd codepipeline
        - terraform version 
        - terraform init -backend-config="key=example/production/terraform.tfstate" 
        - terraform apply -var="environment_name=production" --auto-approve
